@@ -2,8 +2,24 @@
 	--size: 8;
 
 }
+#color_selector {
+	 -webkit-appearance: none;
+	 border: none;
+	 cursor: pointer;
+	 ttransition: all .2s ease-in-out;
+	 box-sizing: border-box;
+	 padding: 0;
+	 margin: 0;
+	width: 100px;
+	height: 100px;
+}
+#color_selector:hover {
 
+	transform: scale(1.1);
+
+}
 .sketch {
+	user-select: none;
 	border: solid;
 	width: 400px;
 	height: 400px;
