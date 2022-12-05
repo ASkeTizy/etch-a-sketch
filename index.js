@@ -18,10 +18,12 @@ function generateGrid(size) {
 	}
 	return grid;
 }
-function setEventListeners() {
+function setEventListeners(color) {
+	if (color == null) color = 'black';
 	let cells = document.getElementsByClassName("sketch_elem");
+	console.log(color);
 	[... cells].forEach((gridElem) => gridElem.addEventListener("mouseover", 
-						(e) => e.buttons == 1 ? setGridElemColor(gridElem,'black') :null , false));
+						(e) => e.buttons == 1 ? setGridElemColor(gridElem,color) :null , false));
 }
 function setGridElemColor(gridElem, color) {
 	gridElem.style.backgroundColor = color;
@@ -42,21 +44,23 @@ slider.oninput = function() {
 	
 
 }
+
 size = slider.value;
 let t  = generateGrid(size);
+
 const core = document.getElementsByClassName("content")[0];
 core.appendChild(t);
-setEventListeners(t);
+setEventListeners();
 let input = document.getElementById('color_selector');
 console.log(input);
 input.addEventListener('change', (e) => {
-	console.log(e.target.value);
+	setEventListeners(e.target.value)
 })
 slider.addEventListener('change', (e) => {
 	size = slider.value;
 	t.remove();	
 	t  = generateGrid(size);
 	core.appendChild(t);
-	setEventListeners(t);
+	setEventListeners();
 })
 // document.body.append(grid);
