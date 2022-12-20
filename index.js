@@ -40,16 +40,17 @@ class Sketcher {
 		r.style.setProperty('--size', size);
 		console.log(this);
 	}
-	set setSize(size) {
-		this.#size = size;
-	}
+
 	rangeValueChanger() {
 		const slider = document.getElementById("myRange");
 		const output = document.getElementById("demo");
+		const val = document.getElementById("val");
+		val.innerHTML = slider.value;
 		output.innerHTML = slider.value;
 		this.#size = slider.value;
 		slider.oninput = function() {
 			output.innerHTML = this.value;
+			val.innerHTML = this.value;
 		}
 		slider.addEventListener('change', (e) => {
 			const core = document.getElementsByClassName("content")[0];
@@ -119,5 +120,6 @@ function main() {
 }
 
 main();
+
 
 
