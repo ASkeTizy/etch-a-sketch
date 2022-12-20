@@ -7,12 +7,13 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+		<h1 class="title">Etch-a-Sketch</h1>
 	<div  class="content">
 		<div class="controller">
 			<input  id="color_selector" type="color" value="black">
 			<div class="slider">
 				<input type="range" min="2" max="64" value="50" class="slider" id="myRange">
-				<p>Значение: <span id="demo"></span></p>
+				<p class="value"><span id="demo"></span> X <span id="val"></span></p>
 			</div>
 				<button class="color_mode">color mode</button>
 				<button class="erazer">erazer</button>
